@@ -3,6 +3,7 @@
 const quantity = document.getElementById('quantity')
 const productGrid = document.getElementById('product-grid')
 
+
 // fetching product data from fakeProduct api
 
 const getProducts = async ()=>{
@@ -16,7 +17,6 @@ const getProducts = async ()=>{
 
 let baskets = JSON.parse(localStorage.getItem('cart')) || [] ;
 
-console.log(baskets);
 
 // displayProducts items
 
@@ -49,7 +49,7 @@ const displayProducts = async (products) =>{
              </div>
              <span>${rate}</span>
            
-             <button onclick="addToCart('${id}', '${title.includes("'") ? title.replace("'" , ""): title}' , ' ${price}', '${image}')" class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-5 font-semibold">Add to cart <i class="fa-solid fa-cart-shopping text-white text-lg"></i></button>
+             <button onclick="addToCart('${id}', '${title.includes("'") ? title.replace("'" , ""): title}' , ' ${price}', '${image}')" class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-5 font-semibold" id="${id}">Add to cart <i class="fa-solid fa-cart-shopping text-white text-lg testing"></i></button>
           </div>
         </div> 
         `
@@ -60,7 +60,9 @@ const displayProducts = async (products) =>{
 
 // addToCart function
 const addToCart = (id , title , price , image) => {
+  //  console.log(id);
     // checking if selected item is already in cart or not
+    // const test = document.getElementById(id) || id
     let searchProduct = baskets.find((product)=> product.id === id); 
     if(searchProduct === undefined){
          // pushing item to cart
@@ -69,14 +71,17 @@ const addToCart = (id , title , price , image) => {
             title :title,
             price :price,
             image :image,
-            item : 1,
+            item : 1,   // product quantity initial value 1 when clicking on add to cart button
+            btnStatus : 'Added to cart',
         })
-
+        
+        // console.log(test);
+        // test.innerText = baskets[0].btnStatus
     }
      else{
-       return ;
+        return ;
     }
-
+    
      // saving data to localStorage
      localStorage.setItem('cart', JSON.stringify(baskets))
 
@@ -88,7 +93,6 @@ const addToCart = (id , title , price , image) => {
 // update quantity value
 
 const updateQuantity = () => {
-    console.log(baskets.length);
     quantity.innerText = baskets.map((product) => product.item).reduce((x,y) => x + y , 0);
 }
 
@@ -97,4 +101,4 @@ const updateQuantity = () => {
 // calling necessary function
 
 getProducts();    // display product function
-updateQuantity()  // update quantity value
+updateQuantity()  // update quantity value 

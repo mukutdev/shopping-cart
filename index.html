@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="cupcake" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,8 @@
     <title>Shopping cart</title>
     <!-- own stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
     <!-- tailwind script file -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- font awesome -->
@@ -18,12 +20,20 @@
         <div class="logo">
             <a class="text-white text-xl font-semibold tracking-widest" href="#">Dynamic Store</a>
         </div>
-        <div class="cart-icon">
+        <div class="cart-icon  cursor-pointer">
             <i class="fa-solid fa-cart-shopping text-white text-lg"></i>
-            <span class="counter absolute bg-white rounded-full text-center inline-block " id="quantity">12</span>
+            <span class="counter absolute bg-slate-700 text-white rounded-full text-center inline-block" id="quantity">12</span>
         </div>
         </nav>
     </header>
+    <main>
+        <div class="container mx-auto my-8">
+            <h1 class="text-2xl font-semibold tracking-widest text-center">Welcome To Dynamic Store</h1>
+            <div class="product-grid grid grid-cols-4 gap-5 my-10" id="product-grid">
+               
+            </div>
+        </div>
+    </main>
 
 
 

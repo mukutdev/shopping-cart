@@ -43,4 +43,7 @@ body{
     font-weight: 900;
     color: #f8ce0b;
 }
-/* disable btn css */
+
+.none{
+    display: none;
+}

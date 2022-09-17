@@ -4,15 +4,6 @@ const quantity = document.getElementById('quantity')
 const productGrid = document.getElementById('product-grid')
 
 
-// fetching product data from fakeProduct api
-
-const getProducts = async ()=>{
-    const url = 'https://fakestoreapi.com/products'
-    const res = await fetch(url)
-    const data = await res.json();
-    displayProducts(data)
- }
-
 //  baskets
 
 let baskets = JSON.parse(localStorage.getItem('cart')) || [] ;
@@ -98,7 +89,19 @@ const updateQuantity = () => {
 
 
 
+
+
 // calling necessary function
 
-getProducts();    // display product function
+getProducts();  // display product function
+
 updateQuantity()  // update quantity value 
+
+
+// cart page functionality
+
+if(baskets.length > 0){
+  console.log('adada');
+}else{
+  console.log('pokk');
+}

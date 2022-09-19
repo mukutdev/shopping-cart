@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/802fdeb78f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="bg-blue-600 py-4 fixed z-10 top-0 w-full">
+    <header class="bg-blue-600 py-4 fixed z-10 top-0 w-full xl:px-0 px-6">
         <nav class="container mx-auto flex justify-between">
         <div class="logo">
             <a class="text-white text-xl font-semibold tracking-widest" href="./index.html">Dynamic Store</a>
@@ -32,10 +32,10 @@
     <main>
         <section class="product-cart-area container mx-auto my-40">
              <h1 class="text-center text-2xl font-semibold">Shopping Cart!</h1>
-            <div class="cart-wrapper flex my-16  justify-between gap-10 mx-auto">
-                <div class="product-list w-3/4 " id="product-list">
+            <div class="cart-wrapper xl:flex  my-16  justify-between gap-10 mx-auto">
+                <div class="product-list xl:w-3/4 " id="product-list">
                     <div class="overflow-x-auto ">
-                        <h3 class="text-center py-4 text-3xl font-bold" id="no-item"></h3>
+                        <h3 class="text-center text-3xl font-bold" id="no-item"></h3>
                         <table class="table w-full">
                           <!-- head -->
                           
@@ -55,28 +55,30 @@
                         </table>
                       </div>
                 </div>
-                <div class="grand-total-area px-8">
+                <div class="grand-total-area xl:px-8 xl:w-1/4 xl:my-0 mt-6 mx-4">
                     <div class="total-calculation border-2 p-6 shadow-md">
                         <h3 class="text-2xl font-semibold">CART TOTALS</h3>
                         <div class="cart-subtotal flex justify-between pt-4">
                             <h4 class="font-semibold text-base">Subtotal</h4>
-                             <h5 class="font-semibold text-lg"> $1200</h5>
+                             <h5 class="font-semibold text-lg" > $<span id="subtotal">0</span></h5>
                         </div>
                         <div class="shipping-method flex justify-between pt-4">
                             <h4 class="font-semibold text-base">Shipping</h4>
-                            <h5 class="font-semibold text-lg">$100</h5>
+                            <h5 class="font-semibold text-lg">$<span id="shipping">0</span></h5>
                         </div>
-                        <div class="coupon  pt-4 gap-5">
-                             <input type="text" placeholder="Apply coupon here" class=" w-full py-4 border px-3 text-base outline-none">
-                             <button class="py-4 px-1 text-lg font-medium rounded-none bg-blue-600 hover:bg-slate-800 text-white w-full mt-3">Apply Coupon</button>
-                        </div>
+                        <!-- <div class="coupon  pt-4 gap-5">
+                             <p id="coupon-msg" class="text-green-700 font-normal text-sm pt-1"></p>
+                             <input type="text" placeholder="Apply coupon here" id="coupon" class=" w-full py-4 border px-3 text-base outline-none">
+                             <button onclick="applyCoupon()" class="py-4 px-1 text-lg font-medium rounded-none bg-blue-600 hover:bg-slate-800 text-white w-full mt-3">Apply Coupon</button>
+
+                        </div> -->
                         <div class="grand-total flex justify-between py-5">
                             <h4 class="font-semibold text-xl">Total</h4>
-                            <h5 class="font-semibold text-2xl">$1300</h5>
+                            <h5 class="font-semibold text-2xl">$ <span id="total">0</span></h5>
                         </div>
 
                         <div class="checkout-btn flex">
-                            <button class="py-4 px-1 text-lg font-medium rounded-none bg-blue-600 hover:bg-slate-800 text-white w-full mt-3">Proceed To Checkout</button>
+                            <button onclick="checkoutBtn()" class="py-4 px-1 text-lg font-medium rounded-none bg-blue-600 hover:bg-slate-800 text-white w-full mt-3">Proceed To Checkout</button>
                         </div>
                         
                     </div>
@@ -90,7 +92,7 @@
 
 
    <!-- <script src="./assets/js/cart.js"></script> -->
-    <script src="./assets/js/data.js"></script>
-    <script src="./assets/js/cart.js"></script>
+   <script src="./assets/js/data.js"></script>
+   <script src="./assets/js/cart.js"></script>
 </body>
 </html>

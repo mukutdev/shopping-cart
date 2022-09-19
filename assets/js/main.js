@@ -60,14 +60,13 @@ const addToCart = (id , title , price , image) => {
          baskets.push({
             id :id,
             title :title,
-            price :price,
+            price : parseInt(price),
             image :image,
             item : 1,   // product quantity initial value 1 when clicking on add to cart button
             btnStatus : 'Added to cart',
         })
+        id.disable = true;
         
-        // console.log(test);
-        // test.innerText = baskets[0].btnStatus
     }
      else{
         return ;
@@ -97,11 +96,3 @@ getProducts();  // display product function
 
 updateQuantity()  // update quantity value 
 
-
-// cart page functionality
-
-if(baskets.length > 0){
-  console.log('adada');
-}else{
-  console.log('pokk');
-}

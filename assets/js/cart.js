@@ -1,7 +1,8 @@
 // getting baskets from localStorage
 const selectedProducts = document.getElementById('selected-products')
 const getTable = document.querySelector('.table')
-
+const noItem = document.getElementById('no-item')
+const cardWrapper = document.getElementById('cart-wrapper')
 // const subtotal = document.getElementById('subtotal')
 let baskets = JSON.parse(localStorage.getItem('cart')) || []
 
@@ -55,8 +56,8 @@ const displayProductCart =  async ()=>{
      
  }
  else{
-     document.getElementById('no-item').innerText = 'cart is empty'
-     getTable.classList.add('none')
+     cardWrapper.classList.add('none')
+     noItem.classList.remove('none')
  }
  
 }

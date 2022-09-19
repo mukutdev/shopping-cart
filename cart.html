@@ -30,12 +30,17 @@
         </nav>
     </header>
     <main>
-        <section class="product-cart-area container mx-auto my-40">
+        <div class="my-40 mx-auto w-50 text-center none" id="no-item">
+        <h3 class="text-center text-3xl font-bold mb-6 " > Cart is empty</h3>
+        <a class="py-4 px-4 text-lg font-sm rounded-none bg-blue-600 hover:bg-slate-800 text-white w-full" href="./index.html">Back To Home</a>
+        </div>
+        <section class="product-cart-area container mx-auto my-40" id="cart-wrapper">
+            
              <h1 class="text-center text-2xl font-semibold">Shopping Cart!</h1>
-            <div class="cart-wrapper xl:flex  my-16  justify-between gap-10 mx-auto">
+            <div class="cart-wrapper xl:flex  my-16  justify-between gap-10 mx-auto" >
                 <div class="product-list xl:w-3/4 " id="product-list">
                     <div class="overflow-x-auto ">
-                        <h3 class="text-center text-3xl font-bold" id="no-item"></h3>
+                        
                         <table class="table w-full">
                           <!-- head -->
                           
